@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
+  before_action :get_student, except: [:create, :index]
 
   def new
-   @student = Student.new
   end
 
   def create
@@ -11,15 +11,12 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
   end
 
   def edit
-    @student = Student.find(params[:id])
   end
 
   def update
-    @student = Student.find(params[:id])
     @student.update(student_params)
     redirect_to student_path(@student)
   end
@@ -28,6 +25,10 @@ class StudentsController < ApplicationController
 
   def student_params
     params.require(:student).permit!
+  end
+
+  def get_student
+    @student = !!params[:id] ? Student.find(params[:id]) : Student.new
   end
 
 end

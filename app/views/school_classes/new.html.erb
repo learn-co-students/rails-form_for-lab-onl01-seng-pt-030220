@@ -1,12 +1,5 @@
 <h1>School Class Form</h1>
 
-<%= form_for(@class) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :room_number %>
-  <%= f.number_field :room_number %>
-  <br>
-  <%= f.submit %>
+<%= render "form" %>
 
-<% end %>
+<%= link_to "All Classes", school_classes_path %>
