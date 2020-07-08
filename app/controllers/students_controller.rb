@@ -1,6 +1,10 @@
 class StudentsController < ApplicationController
   before_action :get_student, except: [:create, :index]
 
+  def index
+    @students = Student.all
+  end
+
   def new
   end
 

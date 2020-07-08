@@ -1,12 +1,5 @@
 <h1>Student Form</h1>
 
-<%= form_for(@student) do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br>
+<%= render "form" %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br>
-
-  <%= f.submit %>
-
-<% end %>
+<%= link_to "Back", students_path %>
