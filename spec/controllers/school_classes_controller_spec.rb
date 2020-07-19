@@ -2,7 +2,6 @@ require 'rails_helper'
 
 
 describe SchoolClassesController do
-
   describe "POST create" do
     context "with valid attributes" do
       it "creates a new school_class" do
